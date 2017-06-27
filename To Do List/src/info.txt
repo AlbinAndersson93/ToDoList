@@ -12,10 +12,12 @@ x	search for todo items;
 x	mark todo items as not done;
 x	make arraylist a seperate class from main;
 x	Add user input for values on remove & search
-	
-	handle exceptions gracefully;
 x	upload to Github;
-	XML file loading/saving;
+
+
+	handle exceptions gracefully;
 	
+	XML file loading/saving;
+	neat GUI;
 	
 	
