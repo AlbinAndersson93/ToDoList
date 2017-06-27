@@ -1,0 +1,21 @@
+SCRUM
+To Do list project	27/06-17 : 8:30
+
+Create a to do arraylist that can do: //arraylist is a class which calls ToDoItem;
+x	Add items with timestamp;
+x	Print listed items and show status (done/undone);
+x	mark a item as done;
+x	remove an item;
+x	remove all done items;
+x	search for todo items;
+?	edit todo items properties;
+x	mark todo items as not done;
+x	make arraylist a seperate class from main;
+x	Add user input for values on remove & search
+	
+	handle exceptions gracefully;
+x	upload to Github;
+	XML file loading/saving;
+	
+	
+	
