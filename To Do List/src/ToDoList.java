@@ -43,6 +43,7 @@ public class ToDoList {
 
 
 	public void removeAllDone(){
+		boolean itemsRemoved=false;
 		if(toDoList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}else{
@@ -50,9 +51,16 @@ public class ToDoList {
 				boolean b=iterator1.next().isDone();
 
 				if (b==true){
-					System.out.println("Removing all done items.");
+					itemsRemoved=true;
 					iterator1.remove();				
-				}						
+					
+				
+				}
+			
+			}if(itemsRemoved){
+				System.out.println("Removing all done items");
+			}else{
+				System.out.println("No items yet done to remove.");
 			}
 		}
 	}
@@ -65,6 +73,7 @@ public class ToDoList {
 		}if(toDoList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}
+
 	}
 
 	public void removeItem(){

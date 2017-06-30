@@ -16,26 +16,22 @@ public class ToDoMain {
 		Item item3=new Item("c");
 		Item item4=new Item("d");
 
-
 		//for testing;
 		toDoList.addToList(item1);
 		toDoList.addToList(item2);
 		toDoList.addToList(item3);
 		toDoList.addToList(item4);
-
-
-
-		
+	
 		System.out.println("What do you want to do? Type 'operations' to see avalible calls.");
 		String operation = "";
 		while(programRunning){
 			try{
 				operation=input.nextLine();
+				
 			}
 			catch (Exception e){
 				System.out.println("Whoops! An error occured!");
 			}
-
 
 			switch(operation){
 			case "print":toDoList.printList();
@@ -58,7 +54,6 @@ public class ToDoMain {
 			break;
 			case "not done": toDoList.notDoneItem();
 			break;
-
 			case "1":toDoList.printList();
 			break;
 			case "2":createItem();
@@ -92,8 +87,6 @@ public class ToDoMain {
 				+ "\tremaning(6)\noperations(7)\tdone(8)\t\tnot done(9)\nquit(0) \n What do you want to do? ");
 	}
 
-
-
 	private static void exitProgram() {
 		System.out.println("Are you sure you want to leave? yes/no");
 		String asdf2=input.nextLine();
@@ -106,7 +99,6 @@ public class ToDoMain {
 		
 	}
 
-
 	private static void createItem() {
 
 		System.out.println("What do you want to add?");
@@ -117,22 +109,4 @@ public class ToDoMain {
 		System.out.println(asdf2+" added to list");
 
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

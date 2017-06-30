@@ -7,7 +7,7 @@ public class Item {
 	private Date date;
 	private boolean isDone;
 	public int id;
-	
+	private Scanner input=new Scanner(System.in);
 	
 
 
@@ -41,9 +41,5 @@ public class Item {
 		}else{
 			return  "["+date+"] ToDo: "+name;
 		}
-	}
-	
-
-	
-	
+	}	
 }
