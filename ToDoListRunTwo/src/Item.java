@@ -1,55 +1,83 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class Item {
 
-	private int id;
-	private Date startDate;
-	private Date endDate;
-	DateFormat dateFormat=new SimpleDateFormat("dd-MM/yy");		//TODO:implement
+	private String idString;
+	private Date startDate=new Date();
+	private Date endDate=new Date(System.currentTimeMillis()+TimeUnit.DAYS.toMillis(14));	
+	private DateFormat dateFormat=new SimpleDateFormat("EEE dd/MM-yy");		
+	private String startDateString=dateFormat.format(startDate);
+	private String endDateString=dateFormat.format(endDate);
 	private String name;
 	private boolean isDone=false;
 	SaveXML saveXML=new SaveXML();
-	public int totalItems=4; //TODO:Change init;
-	
-	public Item(int id,String name) {
+	public static Integer totalItems=0; //TODO:Change init;
+	public static String totalItemsString="0";
+
+
+
+
+
+	public static Integer getTotalItems() {
+		return totalItems;
+	}
+
+	public static void setTotalItems(Integer totalItems) {
+		Item.totalItems = totalItems;
+	}
+
+	public static void setTotalItemsString(String totalItemsString) {
+		Item.totalItemsString = totalItemsString;
+	}
+
+
+	public Item(String name) {
 
 		
-		this.id = saveXML.getTotalItems()+1;
-		this.startDate = new Date();
-		this.endDate = startDate; //TODO:+14 days;
+		
+		this.totalItems=totalItems.valueOf(totalItemsString)+1;
+		this.totalItemsString=totalItemsString;
+		
+		this.startDate=startDate;
+		this.endDate=endDate;			 
 		this.name = name;
 		this.isDone = isDone;
-		saveXML.setTotalItems(this.getTotalItems()+1);
-		
-		
+		this.idString=totalItems.toString();
+
+		this.startDateString=dateFormat.format(startDate);
+		this.endDateString=dateFormat.format(endDate);
+
+
 	}
 
 	@Override
 	public String toString() {
-		return "#"+id+"[created: "+startDate+", deadline: "+endDate+", "+name+" ,completed="+isDone+"]";
+		return "#"+getIdString()+"[created: "+startDateString+", deadline: "+endDateString+", "+name+" ,completed="+isDone+"]";
+
+	}
+	public String getTotalItemsString() {
+		return totalItemsString;
 	}
 
-	public int getTotalItems() {
-		return totalItems;
-	}
 
-	public void setTotalItems(int totalItems) {
-		this.totalItems = totalItems;
-	}
+
 
 	public String getIdString(){
-		Integer ide=id;
-		return ide.toString();
+		return idString;
 	}
 	public String getStartDateString(){
-		return startDate.toString();
+		return startDateString;
 
 	}		
 	public String getEndDateString(){
 
-		return endDate.toString();
+		return endDateString;
 	}		
 	public String getIsDoneString(){
 		if(isDone==false){
@@ -59,14 +87,16 @@ public class Item {
 		}
 	}
 
+	public void setStartDateString(String startDateString) {
+		this.startDateString = startDateString;
+	}
+
+	public void setEndDateString(String endDateString) {
+		this.endDateString = endDateString;
+	}
 
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -92,4 +122,15 @@ public class Item {
 	public void setDone(boolean isDone) {
 		this.isDone = isDone;
 	}
+
+	public void setIdString(String data) {
+		this.idString=data;
+
+
+	}
+
+
 }
+
+
+

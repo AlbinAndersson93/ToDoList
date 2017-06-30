@@ -43,7 +43,7 @@ public class LoadXML {
                     StartElement startElement = event.asStartElement();
                     // If we have an item element, we create a new item
                     if (startElement.getName().getLocalPart().equals(ITEM)) {
-						item= new Item(0,"null");
+						item= new Item("null");
 					}
 
 
@@ -51,7 +51,11 @@ public class LoadXML {
 				if(event.isStartElement()){
 					if (event.asStartElement().getName().getLocalPart().equals(ID)){
 						event=eventReader.nextEvent();
-						item.setId(3);		//TODO:fix value
+								
+						
+						item.setIdString(event.asCharacters().getData());
+						Item.setTotalItemsString(event.asCharacters().getData()); //TODO: change==takes value from second to last object
+						
 						continue;
 					}
 				}
@@ -65,20 +69,21 @@ public class LoadXML {
 				if(event.isStartElement()){
 					if (event.asStartElement().getName().getLocalPart().equals(STARTDATE)){
 						event=eventReader.nextEvent();
-						//						item.setStartDate(event.asCharacters().getData());		//TODO: cant change to date
+						item.setStartDateString(event.asCharacters().getData());	//								
 						continue;
 					}
 				}
 				if(event.isStartElement()){
 					if (event.asStartElement().getName().getLocalPart().equals(ENDDATE)){
 						event=eventReader.nextEvent();
-						//						item.setEndDate(event.asCharacters().getData());		TODO: cant change to date
+						item.setEndDateString(event.asCharacters().getData());	//	TODO: cant change to date
 						continue;
 					}
 				}
 				if(event.isStartElement()){
 					if (event.asStartElement().getName().getLocalPart().equals(ISDONE)){
 						event=eventReader.nextEvent();
+						
 						if(event.equals("true")){
 							item.setDone(true);
 						}else{
@@ -90,7 +95,9 @@ public class LoadXML {
 				if(event.isEndElement()){
 					EndElement endElement=event.asEndElement();
 					if (endElement.getName().getLocalPart().equals(ITEM)){
+						
 						itemList.add(item);
+						
 					}
 				}
 			}

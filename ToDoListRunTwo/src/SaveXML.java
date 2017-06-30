@@ -72,7 +72,7 @@ public class SaveXML {
 	
 
 
-	private void createNode(XMLEventWriter eventWriter, String id, String name, String startDate,String endDate, String isDone) throws XMLStreamException {
+	private void createNode(XMLEventWriter eventWriter, String idString, String name, String startDateString,String endDateString, String isDone) throws XMLStreamException {
 		XMLEventFactory eventFactory=XMLEventFactory.newInstance();
 		XMLEvent end=eventFactory.createDTD("\n");
 		XMLEvent doubleTab=eventFactory.createDTD("\t\t");
@@ -87,7 +87,7 @@ public class SaveXML {
 
 		
 		StartElement idStartElement=eventFactory.createStartElement("", "", "id");
-		Characters idValue=eventFactory.createCharacters(id);
+		Characters idValue=eventFactory.createCharacters(idString);
 		EndElement	idEndElement=eventFactory.createEndElement("", "","id");
 		
 		StartElement nameStartElement=eventFactory.createStartElement("", "", "name");
@@ -95,11 +95,11 @@ public class SaveXML {
 		EndElement	nameEndElement=eventFactory.createEndElement("", "","name");
 		
 		StartElement startDateStartElement=eventFactory.createStartElement("", "", "startDate");
-		Characters startDateValue=eventFactory.createCharacters(startDate);
+		Characters startDateValue=eventFactory.createCharacters(startDateString);
 		EndElement	startDateEndElement=eventFactory.createEndElement("", "","startDate");
 		
 		StartElement endDateStartElement=eventFactory.createStartElement("", "", "endDate");
-		Characters endDateValue=eventFactory.createCharacters(endDate);
+		Characters endDateValue=eventFactory.createCharacters(endDateString);
 		EndElement	endDateEndElement=eventFactory.createEndElement("", "","endDate");
 		
 		StartElement isDoneStartElement=eventFactory.createStartElement("", "", "isDone");
