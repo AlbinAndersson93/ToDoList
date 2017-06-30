@@ -1,10 +1,10 @@
 TODO:
 x	load & print XML
-	load latest saved id for create new
-	change date format
+x	load latest saved id for create new
+x	change date format
 x	change endDate
 
-
+	implement call functions
 
 
 
