@@ -3,12 +3,16 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class ToDoList {
+	private static final Item Item = null;
 	static ArrayList<Item> itemList=new ArrayList<>();
-	
+	private static Scanner input=new Scanner(System.in);
+
+
+
 	public static void addToList(Item item){
 		itemList.add(item);
 	}
-	
+
 	public static void printList(){
 		for (Item item:itemList){
 			if(itemList.size()<=0){
@@ -16,11 +20,11 @@ public class ToDoList {
 			}else{
 				System.out.println(item);
 			}
-			
+
 		}
 	}
-	
-	public void itemsLeftToDo(){
+
+	public static void itemsLeftToDo(){
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}else{
@@ -38,7 +42,7 @@ public class ToDoList {
 	}
 
 
-	public void removeAllDone(){
+	public static void removeAllDone(){
 		boolean itemsRemoved=false;
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
@@ -49,10 +53,10 @@ public class ToDoList {
 				if (b==true){
 					itemsRemoved=true;
 					iterator1.remove();				
-					
-				
+
+
 				}
-			
+
 			}if(itemsRemoved){
 				System.out.println("Removing all done items");
 			}else{
@@ -63,7 +67,7 @@ public class ToDoList {
 
 
 
-	public void removeItem(){
+	public static void removeItem(){
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}else{
@@ -80,8 +84,12 @@ public class ToDoList {
 						iterator0.remove();
 						System.out.println("Removing item '"+item+"'.");
 						break;
-					}else{System.out.println("What do you want to do then?");
 					}
+					else{System.out.println("What do you want to do then?");
+					}
+
+
+				
 
 
 				}else if(item.equalsIgnoreCase(asdf2)){
@@ -101,7 +109,7 @@ public class ToDoList {
 
 
 
-	public void searchItem() {
+	public static void searchItem() {
 
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
@@ -135,7 +143,7 @@ public class ToDoList {
 			}
 		}
 	}
-	public void doneItem() { //TODO: fix error search -
+	public static void doneItem() { //TODO: fix error search -
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}else{
@@ -168,7 +176,7 @@ public class ToDoList {
 
 
 	//TODO: fix error search - 
-	public void notDoneItem() {
+	public static void notDoneItem() {
 		if(itemList.size()==0){
 			System.out.println("No items in list. type 'add' to add new ones.");
 		}else{
@@ -195,4 +203,48 @@ public class ToDoList {
 			}
 		}
 	}
+	public static void printOperationList() {
+
+		System.out.println("The current avalible operations are:\nprint(1)\tadd(2)\t\tremove(3)\nsearch(4)\tclear(5)"
+				+ "\tremaning(6)\noperations(7)\tdone(8)\t\tnot done(9)\nquit(0) \n What do you want to do? ");
+	}
+
+	public static void exitProgram() {
+		System.out.println("Are you sure you want to leave? yes/no");
+		String asdf2=input.nextLine();
+		if (asdf2.equals("yes")){
+			System.out.println("Goodbye");
+			SaveXML toDoFile=new SaveXML();
+			toDoFile.setFile("toDoList.xml");
+			try{
+				toDoFile.saveFile();
+				System.out.println("Saving list...");
+				System.exit(0);
+			}catch(Exception e){
+				e.printStackTrace();
+				
+			}
+		}else{System.out.println("What do you want to do then?");
+		}
+
+
+	}
+
+	public static void createItem() {
+
+		System.out.println("What do you want to add?");
+		String asdf2=input.nextLine();
+
+		Item newItem=new Item(asdf2);
+		ToDoList.addToList(newItem);
+		System.out.println(asdf2+" added to list");
+
+
+	}
+
+
+
 }
+
+
+

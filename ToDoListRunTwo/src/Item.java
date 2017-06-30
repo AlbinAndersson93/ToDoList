@@ -49,6 +49,7 @@ public class Item {
 		this.name = name;
 		this.isDone = isDone;
 		this.idString=totalItems.toString();
+		
 
 		this.startDateString=dateFormat.format(startDate);
 		this.endDateString=dateFormat.format(endDate);

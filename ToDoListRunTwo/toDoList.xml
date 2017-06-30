@@ -1,42 +1,35 @@
 <?xml version="1.0"?>
 <ToDoList>	<item>
+		<id>1</id>
+		<name>print some awesome code</name>
+		<startDate>fr 30/06-17</startDate>
+		<endDate>fr 14/07-17</endDate>
+		<isDone>false</isDone>
+	</item>
+	<item>
 		<id>2</id>
-		<name>olga</name>
+		<name>go home</name>
 		<startDate>fr 30/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
 	</item>
 	<item>
-		<id>3</id>
-		<name>olga</name>
+		<id>2</id>
+		<name>take a nap</name>
 		<startDate>fr 30/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
 	</item>
 	<item>
-		<id>4</id>
-		<name>olga</name>
+		<id>2</id>
+		<name>buy an airplane</name>
 		<startDate>fr 30/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
 	</item>
 	<item>
-		<id>5</id>
-		<name>olga</name>
-		<startDate>fr 30/06-17</startDate>
-		<endDate>fr 14/07-17</endDate>
-		<isDone>false</isDone>
-	</item>
-	<item>
-		<id>6</id>
-		<name>olga</name>
-		<startDate>fr 30/06-17</startDate>
-		<endDate>fr 14/07-17</endDate>
-		<isDone>false</isDone>
-	</item>
-	<item>
-		<id>7</id>
-		<name>olga</name>
+		<id>2</id>
+		<name>fix this damn index</name>
 		<startDate>fr 30/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>

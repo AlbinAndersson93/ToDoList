@@ -9,3 +9,6 @@ x	change endDate
 
 
 string -> int -> add 1 -> string
+
+
+setTotalItemsString=# of last item loaded
