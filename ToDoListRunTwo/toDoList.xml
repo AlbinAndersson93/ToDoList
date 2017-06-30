@@ -2,14 +2,14 @@
 <ToDoList>	<item>
 		<id>1</id>
 		<name>print some awesome code</name>
-		<startDate>fr 30/06-17</startDate>
+		<startDate>fr 20/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
 	</item>
 	<item>
 		<id>2</id>
 		<name>go home</name>
-		<startDate>fr 30/06-17</startDate>
+		<startDate>fr 30/06-13</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
 	</item>
@@ -30,6 +30,20 @@
 	<item>
 		<id>2</id>
 		<name>fix this damn index</name>
+		<startDate>fr 30/06-17</startDate>
+		<endDate>fr 14/07-17</endDate>
+		<isDone>false</isDone>
+	</item>
+	<item>
+		<id>3</id>
+		<name>asd</name>
+		<startDate>fr 30/06-17</startDate>
+		<endDate>fr 14/07-17</endDate>
+		<isDone>false</isDone>
+	</item>
+	<item>
+		<id>3</id>
+		<name>askgjasfd</name>
 		<startDate>fr 30/06-17</startDate>
 		<endDate>fr 14/07-17</endDate>
 		<isDone>false</isDone>
