@@ -27,70 +27,83 @@ public class TestMain {
 		System.out.println("loading list...");
 		ToDoList.itemList.addAll(loadFile);
 		
-		System.out.println("getTotalItems"+Item.getTotalItems());
+//		System.out.println("getTotalItems"+Item.getTotalItems());
+//
+//		
+//		Application.launch(ToDoGUI.class,args);
+//
+//
+//		ToDoList.printList();
+		//program start
+		
+
+		for(Item item:ToDoList.itemList){
+			if("asd".equals(item.getName())){
+				System.out.println("Duplicate found");
+			}
+		}
+		
+		
+		
+		System.out.println("What do you want to do? Type 'operations' to see avalible calls.");
+		String operation = "";
 
 		
-		Application.launch(ToDoGUI.class,args);
+		
+		while(programRunning){
+			try{
+				operation=input.nextLine();
 
+			}
+			catch (Exception e){
+				System.out.println("Whoops! An error occured!");
+			}
 
-		ToDoList.printList();
-		//program start
-//		System.out.println("What do you want to do? Type 'operations' to see avalible calls.");
-//		String operation = "";
-//		while(programRunning){
-//			try{
-//				operation=input.nextLine();
-//
-//			}
-//			catch (Exception e){
-//				System.out.println("Whoops! An error occured!");
-//			}
-//
-//			switch(operation){
-//			case "print":ToDoList.printList();
-//			break;
-//			case "add":ToDoList.createItem();
-//			break;
-//			case "remove":ToDoList.removeItem();
-//			break;
-//			case "search":ToDoList.searchItem();
-//			break;
-//			case "clear":ToDoList.removeAllDone();
-//			break;
-//			case "remaining":ToDoList.itemsLeftToDo();
-//			break;
-//			case "operations":ToDoList.printOperationList();
-//			break;
-//			case "quit": ToDoList.exitProgram();	
-//			break;
-//			case "done": ToDoList.doneItem();
-//			break;
-//			case "not done": ToDoList.notDoneItem();
-//			break;
-//			case "1":ToDoList.printList();
-//			break;
-//			case "2":ToDoList.createItem();
-//			break;
-//			case "3":ToDoList.removeItem();
-//			break;
-//			case "4":ToDoList.searchItem();
-//			break;
-//			case "5":ToDoList.removeAllDone();
-//			break;
-//			case "6":ToDoList.itemsLeftToDo();
-//			break;
-//			case "7":ToDoList.printOperationList();
-//			break;
-//			case "8":ToDoList.doneItem();
-//			break;
-//			case "9":ToDoList.notDoneItem();
-//			break;
-//			case "0": ToDoList.exitProgram();
-//			break;
-//
-//			default: System.out.println("That's not an operation, type 'operations' to show a list of operations.");
-//			}
-//		}
+			switch(operation){
+			case "print":ToDoList.printList();
+			break;
+			case "add":ToDoList.createItem();
+			break;
+			case "remove":ToDoList.removeItem();
+			break;
+			case "search":ToDoList.searchItem();
+			break;
+			case "clear":ToDoList.removeAllDone();
+			break;
+			case "remaining":ToDoList.itemsLeftToDo();
+			break;
+			case "operations":ToDoList.printOperationList();
+			break;
+			case "quit": ToDoList.exitProgram();	
+			break;
+			case "done": ToDoList.doneItem();
+			break;
+			case "not done": ToDoList.notDoneItem();
+			break;
+			case "1":ToDoList.printList();
+			break;
+			case "2":ToDoList.createItem();
+			break;
+			case "3":ToDoList.removeItem();
+			break;
+			case "4":ToDoList.searchItem();
+			break;
+			case "5":ToDoList.removeAllDone();
+			break;
+			case "6":ToDoList.itemsLeftToDo();
+			break;
+			case "7":ToDoList.printOperationList();
+			break;
+			case "8":ToDoList.doneItem();
+			break;
+			case "9":ToDoList.notDoneItem();
+			break;
+			case "0": ToDoList.exitProgram();
+			break;
+
+			default: System.out.println("That's not an operation, type 'operations' to show a list of operations.");
+			}
+		}
 
 
 
@@ -123,8 +136,12 @@ public class TestMain {
 
 
 		//saving list
+
 		toDoFile.setFile("toDoList.xml");
 		try{
+			for(Item item:ToDoList.itemList){
+				System.out.println(item);
+			}
 			toDoFile.saveFile();
 			System.out.println("Saving list...");
 		}catch(Exception e){

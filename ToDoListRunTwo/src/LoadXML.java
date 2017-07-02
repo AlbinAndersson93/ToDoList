@@ -84,10 +84,12 @@ public class LoadXML {
 					if (event.asStartElement().getName().getLocalPart().equals(ISDONE)){
 						event=eventReader.nextEvent();
 						
-						if(event.equals("true")){
+						
+						if(event.toString().equals("true")){
 							item.setDone(true);
 						}else{
 							item.setDone(false);
+							
 						}					
 						continue;
 					}

@@ -9,9 +9,6 @@ public class ToDoList {
 
 
 
-	public static void addToList(Item item){
-		itemList.add(item);
-	}
 
 	public static void printList(){
 		for (Item item:itemList){
@@ -89,7 +86,7 @@ public class ToDoList {
 					}
 
 
-				
+
 
 
 				}else if(item.equalsIgnoreCase(asdf2)){
@@ -211,6 +208,7 @@ public class ToDoList {
 
 	public static void exitProgram() {
 		System.out.println("Are you sure you want to leave? yes/no");
+
 		String asdf2=input.nextLine();
 		if (asdf2.equals("yes")){
 			System.out.println("Goodbye");
@@ -222,7 +220,7 @@ public class ToDoList {
 				System.exit(0);
 			}catch(Exception e){
 				e.printStackTrace();
-				
+
 			}
 		}else{System.out.println("What do you want to do then?");
 		}
@@ -235,16 +233,21 @@ public class ToDoList {
 		System.out.println("What do you want to add?");
 		String asdf2=input.nextLine();
 
-		Item newItem=new Item(asdf2);
-		ToDoList.addToList(newItem);
-		System.out.println(asdf2+" added to list");
+		for(Item item: ToDoList.itemList){
+			if(asdf2.equals(item.getName())){
+				asdf2=asdf2.concat(" 1");
+				System.out.println("Duplicate found, setting name to '"+asdf2);
+			}}
+			Item newItem=new Item(asdf2);
+			itemList.add(newItem);
+
+			System.out.println(asdf2+" added to list");
+
+
+		
 
 
 	}
 
 
-
 }
-
-
-

@@ -11,7 +11,7 @@ public class Item {
 	private String idString;
 	private Date startDate=new Date();
 	private Date endDate=new Date(System.currentTimeMillis()+TimeUnit.DAYS.toMillis(14));	
-	private DateFormat dateFormat=new SimpleDateFormat("EEE dd/MM-yy");		
+	private DateFormat dateFormat=new SimpleDateFormat("dd/MM-yy");		
 	private String startDateString=dateFormat.format(startDate);
 	private String endDateString=dateFormat.format(endDate);
 	private String name;
